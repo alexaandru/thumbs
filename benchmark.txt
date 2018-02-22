@@ -1,0 +1,19 @@
+Workload:
+$ find content/images/articole/|grep jpg$|wc -l
+43356
+
+
+Commandline including flags,Max Resident Memory (KB),Duration (sec):
+$ /usr/bin/time --format "%C,%M,%e" ./thumbs.rb
+./thumbs.rb,27368,5.94
+$ /usr/bin/time --format "%C,%M,%e" ./thumbs.rb
+./thumbs.rb,27348,5.97
+
+$ /usr/bin/time --format "%C,%M,%e" thumbs
+thumbs,8804,0.17
+$ /usr/bin/time --format "%C,%M,%e" thumbs
+thumbs,8668,0.18
+
+
+Outcome:
+3 x times less memory usage, 33 times faster
